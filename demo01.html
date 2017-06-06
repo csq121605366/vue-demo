@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>声明式渲染</title>
+  <script type="text/javascript" src="libs/vue.js"></script>
+  <script type="text/javascript" src="libs/jquery-3.2.1-slim.js"></script>
+</head>
+
+<body>
+  <h2>声明式渲染</h2>
+  <p>Vue.js 的核心是一个允许采用简洁的模板语法来声明式的将数据渲染进 DOM：</p>
+  <div id="app1">
+     {{ message }}
+ </div>
+
+ <p>我们已经生成了我们的第一个 Vue 应用！看起来这跟单单渲染一个字符串模板非常类似，但是 Vue 在背后做了大量工作。现在数据和 DOM 已经被绑定在一起，所有的元素都是响应式的。我们如何知道？打开你的浏览器的控制台（就在这个页面打开），并修改 app.message，你将看到上例相应地更新。</p>
+ <div id="app2">
+     <span :title="message">
+       鼠标悬停几秒钟查看此处动态绑定的提示信息！
+   </span>
+</div>
+<h3>条件与循环</h3>
+<div id="app3">
+ <span v-if="seen">现在看见你了</span>
+</div>
+
+<div id="app4">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+
+
+<div id="app5">
+  <p>{{ message }}</p>
+  <button @click="reverseMessage">逆转消息</button>
+</div>
+
+
+<div id="app6">
+  <p>{{ message }}</p>
+  <input v-model="message" >
+</div>
+
+<div id="app7">
+  <ol>
+    <!-- 现在我们为每个todo-item提供待办项对象    -->
+    <!-- 待办项对象是变量，即其内容可以是动态的 -->
+    <todo-item v-for="(item,index) in groceryList" :todo="item" :key="item.id"></todo-item>
+  </ol>
+</div>
+
+
+<script type="text/javascript" src="js/demo01.js"></script>
+</body>
+
+</html>

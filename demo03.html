@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>声明式渲染</title>
+    <script type="text/javascript" src="libs/vue.js"></script>
+    <script type="text/javascript" src="libs/jquery-3.2.1-slim.js"></script>
+
+</head>
+
+<div id="vm1">
+    <select>
+        <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+    </select>
+    <span>select:{{selected}}</span>
+</div>
+
+
+
+<script type="text/javascript" src="js/demo03.js"></script>
+</body>
+
+</html>
